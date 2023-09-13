@@ -1,0 +1,23 @@
+name: Pipeline 
+
+on:
+  push:
+    branches: ['dev', 'main']  
+  pull_request:    
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+
+  init-inputs-job:
+    uses: ./.github/workflows/init-inputs.yml
+
+  build-deploy-job: 
+    needs: [init-inputs-job]  
+    uses: ./.github/workflows/build-deploy.yml
+    with:
+      BRANCH: ${{ needs.init-inputs-job.outputs.BRANCH }}
+      ENVIRONMENT: ${{ needs.init-inputs-job.outputs.ENVIRONMENT }}      
+    secrets: inherit

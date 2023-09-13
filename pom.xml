@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.sud.demo</groupId>
+  <artifactId>demo</artifactId>
+  <version>1.30-SNAPSHOT</version>
+  <packaging>war</packaging>
+
+  <name>demo Maven Webapp</name>
+  <!-- FIXME change it to the project's website -->
+  
+  <scm>
+    <connection>scm:git:https://${env.GIT_USERNAME}:${env.GIT_PASSWORD}@github.com/sudarsana-reddy/github-release-proj.git</connection>
+    <url>http://github.com/sudarsana-reddy/github-release-proj</url>
+    <developerConnection>scm:git:https://${env.GIT_USERNAME}:${env.GIT_PASSWORD}@github.com/sudarsana-reddy/github-release-proj.git</developerConnection>
+   <tag>demo-main-1.23</tag>
+   <!-- <connection>scm:git:https://sudarsana.ala@gmail.com:${env.BITBUCKET_PASSWORD}@bitbucket.org/sudarsana1/github-release-proj.git</connection>
+    <url>https://sudarsana-ala@bitbucket.org/sudarsana1/github-release-proj.git</url>
+    <developerConnection>scm:git:https://sudarsana.ala@gmail.com:${env.BITBUCKET_PASSWORD}@bitbucket.org/sudarsana1/github-release-proj.git</developerConnection>
+   <tag>demo-main-1.23</tag> -->
+  </scm>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+    <demo.version>1.3</demo.version>
+  </properties>
+
+  <build>
+    <finalName>demo</finalName>
+    <pluginManagement>
+
+      <plugins>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>2.5.3</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <version>3.1.1</version>
+          <configuration>
+            <artifactItems>
+              <artifactItem>
+                <groupId>com.sud.demo</groupId>
+                <artifactId>demo</artifactId>
+                <version>${demo.version}</version>
+                <type>war</type>
+                <overWrite>true</overWrite>
+                <outputDirectory>${project.basedir}/target</outputDirectory>
+              </artifactItem>
+            </artifactItems>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.tomcat.maven</groupId>
+          <artifactId>tomcat7-maven-plugin</artifactId>
+          <version>2.2</version>
+          <configuration>
+            <url>${deploy.url}</url>
+            <server>${deploy.server}</server>
+            <path>${deploy.path}</path>
+            <warFile>${deploy.warFile}</warFile>
+          </configuration>
+        </plugin>
+
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <!-- <repositories>
+    <repository>
+      <id>github-packages</id>
+      <url>https://maven.pkg.github.com/sudarsana-reddy/github-release-proj</url>
+    </repository>
+  </repositories> -->
+
+  <repositories>
+    <repository>
+      <id>nexus-release</id>
+      <url>https://ee40-124-123-191-210.ngrok-free.app/repository/demo/</url>     
+    </repository>
+  </repositories>
+
+  <distributionManagement>
+    <!-- <repository>
+      <id>github-packages</id>
+      <url>https://maven.pkg.github.com/sudarsana-reddy/github-release-proj</url>     
+    </repository> -->
+    <repository>
+      <id>nexus-release</id>
+      <url>https://ee40-124-123-191-210.ngrok-free.app/repository/demo/</url>     
+    </repository>
+    <snapshotRepository>
+      <id>nexus-snapshots</id>
+      <url>https://ee40-124-123-191-210.ngrok-free.app/repository/demo-snapshots/</url>     
+    </snapshotRepository>
+  </distributionManagement>
+</project>
