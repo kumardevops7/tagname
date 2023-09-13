@@ -31,7 +31,6 @@ jobs:
   release:
     needs: build
     runs-on: ubuntu-latest
-    if: ${{ inputs.BRANCH == 'sit'  && github.event_name != 'pull_request' }}
     steps:
       - name: checkout
         uses: actions/checkout@v3
