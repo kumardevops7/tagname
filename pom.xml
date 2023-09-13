@@ -71,12 +71,12 @@
     </pluginManagement>
   </build>
 
-  <!-- <repositories>
+  <repositories>
     <repository>
       <id>github-packages</id>
       <url>https://maven.pkg.github.com/kumardevops7/tagname</url>
     </repository>
-  </repositories> -->
+  </repositories>
 
   <repositories>
     <repository>
@@ -86,17 +86,9 @@
   </repositories>
 
   <distributionManagement>
-    <!-- <repository>
+    <repository>
       <id>github-packages</id>
       <url>https://maven.pkg.github.com/kumardevops7/tagname</url>     
-    </repository> -->
-    <repository>
-      <id>nexus-release</id>
-      <url>https://ee40-124-123-191-210.ngrok-free.app/repository/demo/</url>     
     </repository>
-    <snapshotRepository>
-      <id>nexus-snapshots</id>
-      <url>https://ee40-124-123-191-210.ngrok-free.app/repository/demo-snapshots/</url>     
-    </snapshotRepository>
   </distributionManagement>
 </project>
