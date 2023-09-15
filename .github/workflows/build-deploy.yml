@@ -27,7 +27,7 @@ jobs:
         run: |
           mvn clean install
         env:
-          GITHUB_ENV: "test"
+          GITHUB_ENV: ${{ github.ref }}
       
 
   release:
@@ -66,4 +66,4 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.PAT }}
             GIT_USERNAME: ${{ github.actor }}
             GIT_PASSWORD: ${{ secrets.PAT }}
-            GITHUB_ENV: "test"
+            GITHUB_ENV: ${{ github.ref }}
