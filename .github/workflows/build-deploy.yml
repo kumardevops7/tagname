@@ -43,14 +43,14 @@ jobs:
           echo "branch name: $branchName"
           echo "BRANCH_NAME=$branchName" >> "$GITHUB_OUTPUT"
           
-          project_version=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
-          echo "project Version = '$project_version'"
-          IFS='-'
-          read -ra arr <<< "$project_version"
-          art_version=${arr[0]}
-          echo "version=$art_version"
-          echo "ARTIFACT_VERSION=$art_version"  >> "$GITHUB_OUTPUT"
-          echo "PROJECT_VERSION=$project_version"  >> "$GITHUB_OUTPUT"
+          # project_version=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+          # echo "project Version = '$project_version'"
+          # IFS='-'
+          # read -ra arr <<< "$project_version"
+          # art_version=${arr[0]}
+          # echo "version=$art_version"
+          # echo "ARTIFACT_VERSION=$art_version"  >> "$GITHUB_OUTPUT"
+          # echo "PROJECT_VERSION=$project_version"  >> "$GITHUB_OUTPUT"
           
 
       - name: release to github packages
