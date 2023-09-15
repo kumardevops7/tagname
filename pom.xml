@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.sud.demo</groupId>
-  <artifactId>${env.GITHUB_ENV}</artifactId>
+  <artifactId>demo-sit</artifactId>
   <version>1.9-SNAPSHOT</version>
   <packaging>war</packaging>
 
