@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.sud.demo</groupId>
-  <artifactId>demo-${{ inputs.environment }}</artifactId>
+  <artifactId>demo-${env.GITHUB_ENV}<</artifactId>
   <version>1.9-SNAPSHOT</version>
   <packaging>war</packaging>
 
