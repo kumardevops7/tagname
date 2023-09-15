@@ -26,6 +26,8 @@ jobs:
       - name: build
         run: |
           mvn clean install
+        env:
+          GITHUB_ENV: "test"
       
 
   release:
