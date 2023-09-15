@@ -64,4 +64,4 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.PAT }}
             GIT_USERNAME: ${{ github.actor }}
             GIT_PASSWORD: ${{ secrets.PAT }}
-            GITHUB_ENV: ${{ inputs.environment }}
+            GITHUB_ENV: "test"
