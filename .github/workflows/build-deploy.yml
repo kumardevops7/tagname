@@ -25,7 +25,7 @@ jobs:
 
       - name: build
         run: |
-          mvn clean install -Dproject.artifactId=test
+          mvn clean install -DartifactId=test
       
 
   release:
